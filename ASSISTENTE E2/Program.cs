@@ -56,7 +56,12 @@ namespace ASSISTENTE_E2
             target.WindowState = FormWindowState.Normal;
         }
 
-        internal static void Exit() => Application.Exit();
+        internal static void Exit()
+        {
+            GenerateLog();
+            Application.Exit();
+        }
         internal static void Restart() => Application.Restart();
+        internal static void GenerateLog() => DataControl.RWControl.SaveLog();
     }
 }

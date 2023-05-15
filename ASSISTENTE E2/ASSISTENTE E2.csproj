@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataControl\RWControl.cs" />
     <Compile Include="Engine\RecognitionEngine.cs" />
     <Compile Include="Engine\SynthesizerEngine.cs" />
     <Compile Include="Execution\CommandType.cs" />
@@ -123,5 +124,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,6 +11,25 @@
             set { Properties.Settings.Default.DebugMode = value; }
         }
         internal static System.Drawing.Icon Icon => Properties.Resources.icon;
+        internal static string DataPath
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(Properties.Settings.Default.DataPath) ||
+                 string.IsNullOrWhiteSpace(Properties.Settings.Default.DataPath))
+                {
+                    var hdname = System.Environment.GetLogicalDrives()[0];
+                    var username = System.Environment.UserName;
+
+                    return $"{hdname}\\User\\{username}\\Documents\\{Name}";
+                }
+
+                return Properties.Settings.Default.DataPath;
+
+            }
+
+            set { Properties.Settings.Default.DataPath = value; }
+        }
         internal static void Save() => Properties.Settings.Default.Save();
     }
 }
